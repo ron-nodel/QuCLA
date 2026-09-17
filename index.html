@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantum Device Modeling Group — UCLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap lockup">
+    <a class="ucla" href="https://www.cqse.ucla.edu/"><span class="ucla-mark">UCLA</span><span class="ucla-text">Center for Quantum<br>Science &amp; Engineering</span></a>
+    <img class="cqse" src="images/cqse-logo.png" alt="CQSE">
+  </div>
+  <div class="rule"></div>
+  <div class="wrap titlebar">
+    <h1>Quantum Device Modeling Group</h1>
+    <nav aria-label="Sections"><ul><li><a href="index.html#group">Group</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="index.html#open">Open projects</a></li><li><a href="collaborators.html">Collaborators</a></li><li><a href="index.html#publications">Publications</a></li><li><a href="index.html#contact">Contact</a></li></ul></nav>
+  </div>
+  <div class="rule"></div>
+</header>
+
+<main>
+  <section class="intro wrap">
+    <div class="intro-text">
+      <p class="lede">Predicting how semiconductor quantum-dot devices behave, before they are built.</p>
+      <p class="muted">MaSQE (Modeling and Simulation for Quantum Exploration) is our device-modeling suite for gate-defined semiconductor quantum dots. It solves the multi-electron Schrödinger equation by full configuration interaction, self-consistently with the electrostatic potential of a realistic device geometry, on real-space grids across multiple domains and models (MDMM). The result is the energy spectrum of coupled quantum-dot systems in silicon and germanium, accurate enough to guide device design, extract effective parameters such as charging energies, lever arms, and exchange couplings, and compare directly with experiment.</p>
+      <p class="muted small">Electrical and Computer Engineering, Mathematics, and the Center for Quantum Science and Engineering</p>
+    </div>
+    <img class="group-photo" src="images/group-photo.jpg" alt="The group">
+  </section>
+
+  <section id="group" class="wrap">
+    <h2>Group</h2>
+    <ul class="people"><li>
+  <div class="headshot" data-person="gyure"><img src="images/people/face5.jpg" alt="Mark F. Gyure"></div>
+  <div class="name">Mark F. Gyure</div>
+  <div class="role">Adjunct Professor, Electrical and Computer Engineering<br>Executive Director, Center for Quantum Science and Engineering</div>
+</li><li>
+  <div class="headshot" data-person="anderson"><img src="images/people/face4.jpg" alt="Chris Anderson"></div>
+  <div class="name">Chris Anderson</div>
+  <div class="role">Professor Emeritus, Mathematics</div>
+</li><li>
+  <div class="headshot" data-person="kanaar"><img src="images/people/face6.jpg" alt="David W. Kanaar"></div>
+  <div class="name">David W. Kanaar</div>
+  <div class="role">Postdoctoral scholar<br><a href="https://dwkanaar.github.io/">dwkanaar.github.io</a></div>
+</li><li>
+  <div class="headshot" data-person="culver"><img src="images/people/face7.jpg" alt="Adrian Culver"></div>
+  <div class="name">Adrian Culver</div>
+  <div class="role">Postdoctoral scholar</div>
+</li><li>
+  <div class="headshot" data-person="nodel"><img src="images/people/face2.jpg" alt="Ron Nodel"></div>
+  <div class="name">Ron Nodel</div>
+  <div class="role">Graduate student</div>
+</li><li>
+  <div class="headshot" data-person="kumar"><img src="images/people/face1.jpg" alt="Ayan Kumar"></div>
+  <div class="name">Ayan Kumar</div>
+  <div class="role">Graduate student</div>
+</li><li>
+  <div class="headshot" data-person="eagen"><img src="images/people/face8.jpg" alt="Emily Eagen"></div>
+  <div class="name">Emily Eagen</div>
+  <div class="role">Graduate student</div>
+</li></ul>
+    <div class="alumni"><h3>Alumni</h3><ul><li><img class="face alum" src="images/people/face3.jpg" alt=""><span><span class="name">Leah Tom</span><span class="muted">, postdoctoral scholar, now at Diraq</span></span></li><li><span class="face alum empty"></span><span><span class="name">Ekmel Ercan</span><span class="muted">, postdoctoral scholar, now at Intel</span></span></li></ul></div>
+  </section>
+
+  <section id="projects" class="wrap">
+    <h2>Projects</h2>
+    <div class="tabs" role="tablist"><button role="tab" data-theme="masqe" aria-selected="true">MaSQE</button><button role="tab" data-theme="twins" aria-selected="false">Digital twins and disorder</button><button role="tab" data-theme="valley" aria-selected="false">Valley physics and heterostructures</button><button role="tab" data-theme="designs" aria-selected="false">New qubit encodings</button><button role="tab" data-theme="ge" aria-selected="false">Germanium hole qubits</button></div><div class="panel" id="theme-masqe" role="tabpanel"><p class="lede blurb">The simulation suite everything else is built on.</p><article class="project" id="masqe">
+  <div class="pic"><div class="placeholder">[Figure from Anderson et al., AIP Advances 2022: real-space FCI benchmark or device domains]</div></div>
+  <div class="body">
+    <h3>MaSQE: Schrödinger–Poisson and FCI at device scale</h3>
+    <p class="muted">Modeling and Simulation for Quantum Exploration (MaSQE) is the group's device-modeling suite for gate-defined semiconductor quantum dots. Its multi-domain, multi-model (MDMM) framework computes the self-consistent Schrödinger–Poisson electrostatics of realistic layered devices, and a full configuration interaction (FCI) solver on real-space grids with a continuously adapted orthonormal orbital basis gives high-precision ground and excited few-electron states. The code was developed with HRL Laboratories and has been used to model exchange-only and triple-dot qubits, cavity-coupled double dots, and multielectron dots.</p>
+    <div class="chips"><span class="chip"><img class="face" src="images/people/face4.jpg" alt="">Chris Anderson</span><span class="chip"><img class="face" src="images/people/face5.jpg" alt="">Mark F. Gyure</span><span class="chip"><img class="face" src="images/people/face2.jpg" alt="">Ron Nodel</span><span class="chip"><img class="face" src="images/people/face6.jpg" alt="">David W. Kanaar</span></div>
+    <div class="muted small">With Sam Quinn, Andrew Pan, Richard Ross, and Andrey Kiselev (HRL Laboratories, Malibu)</div>
+    <div class="selpubs"><div class="label">Selected publications</div><ul><li><a href="https://arxiv.org/abs/2203.00082">High-precision real-space simulation of electrostatically confined few-electron states</a> <span class="muted">(AIP Advances 12, 065123 (2022))</span></li><li><a href="https://arxiv.org/abs/2303.02958">Multielectron dots provide faster Rabi oscillations when the core electrons are strongly confined</a> <span class="muted">(arXiv:2303.02958)</span></li><li><a href="https://arxiv.org/abs/2001.09240">Resonant exchange operation in triple-quantum-dot qubits for spin–photon transduction</a> <span class="muted">(Quantum Science and Technology 5, 034005 (2020))</span></li></ul></div>
+  </div>
+</article>
+</div><div class="panel" id="theme-twins" role="tabpanel" hidden><p class="lede blurb">Fast, simulation-derived models of real devices, and locating the defects inside them.</p><article class="project" id="twins">
+  <div class="pic"><div class="placeholder">[Nodel et al. 2026, Fig. 3(c): FCI-Hubbard cells overlaid on the experimental P2/P3 map]</div></div>
+  <div class="body">
+    <h3>Charge-stability digital twins for Si/SiGe devices</h3>
+    <p class="muted">Operating spin qubits requires tuning the electron occupancy under each gate, traditionally mapped with charge stability diagrams of occupancy versus two gate voltages. Simulating these pixel by pixel from full device models is accurate but computationally prohibitive for design iteration. Using the MDMM framework, an automated tuning procedure identifies a small set of gate-voltage reference points corresponding to specific charge states, and FCI calculations at those points give charging energies, lever arms, and interdot Coulomb interactions that parameterize a Hubbard model directly. The Hubbard model then reconstructs the full diagram efficiently, enabling rapid pre-fabrication optimization of gate geometry and voltage ranges. The method is validated against bias-sweep simulations and experimental data from an Intel Tunnel Falls Si/SiGe device. The framework also identifies experimentally accessible Hubbard parameters for analog quantum simulation and is being extended to non-constant lever arms and tunnel couplings near the tie-bar region used for Pauli-blockade readout.</p>
+    <div class="chips"><span class="chip"><img class="face" src="images/people/face2.jpg" alt="">Ron Nodel</span><span class="chip"><img class="face" src="images/people/face6.jpg" alt="">David W. Kanaar</span><span class="chip"><img class="face" src="images/people/face4.jpg" alt="">Chris Anderson</span><span class="chip"><img class="face" src="images/people/face5.jpg" alt="">Mark F. Gyure</span></div>
+    <div class="muted small">With Hong-Wen Jiang and Jason Petta (UCLA)</div>
+    <div class="selpubs"><div class="label">Selected publications</div><ul><li><a href="https://arxiv.org/abs/2608.28263">Rapid charge stability diagram generation from device-level modeling of semiconductor quantum dots</a> <span class="muted">(arXiv:2608.28263)</span></li></ul></div>
+  </div>
+</article>
+<article class="project flip" id="tlf">
+  <div class="pic"><div class="placeholder">[TLF paper figure: triangulated fluctuator position over the device layout]</div></div>
+  <div class="body">
+    <h3>Locating two-level fluctuators with device simulations</h3>
+    <p class="muted">Charge noise in spin qubit devices is often dominated by individual two-level fluctuators (TLFs), charge traps that switch between two states and shift the dot energies. Fundamental limits on gate fidelities are likely to sit at the materials and device level, so knowing where these fluctuators are is a first step toward removing them. Combining high-precision simulations of realistic devices with experimental data, we developed a procedure that triangulates the spatial location of individual charge fluctuators from their signatures on different gates. The procedure is general and can be applied to data from any spin qubit device. [Add the TLF paper and a figure.]</p>
+    <div class="chips"><span class="chip"><img class="face" src="images/people/face5.jpg" alt="">Mark F. Gyure</span><span class="chip"><img class="face" src="images/people/face4.jpg" alt="">Chris Anderson</span><span class="chip"><img class="face alum" src="images/people/face3.jpg" alt="">Leah Tom <span class="muted small">(alumni)</span></span></div>
+    
+    <div class="selpubs"><div class="label">Selected publications</div><ul><li><a href="https://meetings-archive.aps.org/smt/2026/mar-f10/1/">Probing disorder in semiconductor qubit devices with device simulations</a> <span class="muted">(APS Global Physics Summit, March 2026 (invited talk))</span></li></ul></div>
+  </div>
+</article>
+</div><div class="panel" id="theme-valley" role="tabpanel" hidden><p class="lede blurb">Engineering, mapping, and exploiting the valley degree of freedom in Si/SiGe.</p><article class="project" id="valley">
+  <div class="pic"><div class="placeholder">[Kanaar et al. 2026, Fig. 8: valley splitting for three Ge profiles, TB vs DFT, with the Ge profiles inset]</div></div>
+  <div class="body">
+    <h3>Valley splitting and heterostructure design</h3>
+    <p class="muted">Electrons in strained silicon quantum wells carry a low-lying valley degeneracy whose splitting is set by atomic-scale alloy disorder at the Si/SiGe interface. Small or random valley splittings are therefore a primary obstacle to reliable spin-qubit operation, initialization, and readout. This project shows that simple heterostructure engineering can guarantee a large valley splitting. Using one-dimensional tight-binding device-scale simulations (2k0 theory) that incorporate atomistic alloy disorder, we identified an unorthodox stack, a narrow quantum well combined with a small Ge spike and a pure-Ge cap, that consistently yields valley splittings of 1 to 5 meV across disorder realizations, corroborated by density functional theory. If realized experimentally, this design effectively removes valley splitting as an existential bottleneck for large-scale SiGe quantum processors. The germanium-spike idea builds on earlier experimental work by group alumni.</p>
+    <div class="chips"><span class="chip"><img class="face" src="images/people/face6.jpg" alt="">David W. Kanaar</span><span class="chip"><img class="face" src="images/people/face5.jpg" alt="">Mark F. Gyure</span><span class="chip"><img class="face" src="images/people/face4.jpg" alt="">Chris Anderson</span><span class="chip"><img class="face alum" src="images/people/face3.jpg" alt="">Leah Tom <span class="muted small">(alumni)</span></span><span class="chip"><span class="face alum empty"></span>Ekmel Ercan <span class="muted small">(alumni)</span></span></div>
+    <div class="muted small">With Efrain Martinez and Peihong Zhang (UCLA)</div>
+    <div class="selpubs"><div class="label">Selected publications</div><ul><li><a href="https://arxiv.org/abs/2607.09652">Silicon-germanium heterostructures with enhanced valley splitting for spin qubits</a> <span class="muted">(arXiv:2607.09652)</span></li><li><a href="https://arxiv.org/abs/2104.08232">Valley splittings in Si/SiGe quantum dots with a germanium spike in the silicon well</a> <span class="muted">(Physical Review B 104, 085406 (2021))</span></li></ul></div>
+  </div>
+</article>
+<article class="project flip" id="dqw">
+  <div class="pic"><div class="placeholder">[Leah Tom APS 2026 slide or Cakar et al. 2024 device schematic: back-gated double quantum well with SGM tip]</div></div>
+  <div class="body">
+    <h3>Mapping valley splitting with a double quantum well and a scanning gate</h3>
+    <p class="muted">Spatial variations in valley splitting are a challenge for high-fidelity Si/SiGe quantum dot qubits, because low-lying valley states lead to leakage outside the logical subspace. We designed a back-gated Si/SiGe double quantum well for spatial mapping of valley splitting with a scanning gate microscope. The lower well serves as an electron reservoir while the upper well hosts a tip-induced quantum dot, and a resonator integrated in the tip couples to dot transitions for pulsed-gate spectroscopy of the valley splitting. Inter-well spacing, well depth, and well width are optimized for sufficient tunnel coupling between dot and reservoir. Earlier simulations showed that a tip-induced dot formed near source and drain electrodes can be moved adiabatically far from the gates, so that changes in valley splitting across an interface defect can be detected. The platform allows mapping before gate deposition and deterministic placement of qubits where the splitting is large.</p>
+    <div class="chips"><span class="chip"><img class="face" src="images/people/face4.jpg" alt="">Chris Anderson</span><span class="chip"><img class="face" src="images/people/face5.jpg" alt="">Mark F. Gyure</span><span class="chip"><img class="face alum" src="images/people/face3.jpg" alt="">Leah Tom <span class="muted small">(alumni)</span></span><span class="chip"><span class="face alum empty"></span>Ekmel Ercan <span class="muted small">(alumni)</span></span></div>
+    <div class="muted small">With Efe Cakar and Jason Petta (UCLA)</div>
+    <div class="selpubs"><div class="label">Selected publications</div><ul><li><a href="https://meetings-archive.aps.org/smt/2026/mar-f10/2/">Design and simulation of a back-gated Si/SiGe double quantum well for valley splitting mapping</a> <span class="muted">(APS Global Physics Summit, March 2026 (talk))</span></li><li><a href="https://pubs.aip.org/aip/apl/article/125/2/024001/3303021">Toward utilizing scanning gate microscopy as a high-resolution probe of valley splitting in Si/SiGe heterostructures</a> <span class="muted">(Applied Physics Letters 125 (2024))</span></li><li><a href="https://meetings-archive.aps.org/smt/2026/mar-f10/1/">Probing disorder in semiconductor qubit devices with device simulations</a> <span class="muted">(APS Global Physics Summit, March 2026 (invited talk))</span></li></ul></div>
+  </div>
+</article>
+<article class="project" id="noise">
+  <div class="pic"><div class="placeholder">[Kanaar et al. 2025, Fig. 1: spectator-valley singlet-triplet level diagram]</div></div>
+  <div class="body">
+    <h3>Charge-noise sensing with valley states</h3>
+    <p class="muted">Charge noise is the dominant error source in semiconductor spin qubits, but in situ characterization is difficult because measuring the logical state induces collapse. This project introduces a non-demolition probe that reads out the valley degree of freedom: interface steps and alloy disorder give valley states a transition dipole that couples to an on-chip microwave resonator, so valley-splitting fluctuations can be tracked dispersively without disturbing the spin state. Analytical signal-to-noise calculations and tight-binding simulations confirm sub-millisecond measurement times at unity signal-to-noise. We extended this to two-electron singlet-triplet qubits by initializing a spectator electron in an excited valley state to continuously monitor exchange fluctuations during logic gates, enabling real-time recalibration and feedforward correction. We are now examining whether the same approach applies to three-electron exchange-only qubits, which have become prominent in large-scale devices.</p>
+    <div class="chips"><span class="chip"><img class="face" src="images/people/face6.jpg" alt="">David W. Kanaar</span><span class="chip"><img class="face" src="images/people/face5.jpg" alt="">Mark F. Gyure</span><span class="chip"><span class="face alum empty"></span>Ekmel Ercan <span class="muted small">(alumni)</span></span></div>
+    <div class="muted small">With J. P. Kestner and Yasuo Oda (University of Maryland, Baltimore County)</div>
+    <div class="selpubs"><div class="label">Selected publications</div><ul><li><a href="https://arxiv.org/abs/2507.14108">Fast charge noise sensing using a spectator valley state in a singlet-triplet qubit</a> <span class="muted">(arXiv:2507.14108)</span></li><li><a href="https://arxiv.org/abs/2402.14765">Proposed real-time charge noise measurement via valley state reflectometry</a> <span class="muted">(arXiv:2402.14765)</span></li><li><span class="name">Fast charge noise sensing in singlet-triplet qubits</span> <span class="muted">(Silicon Quantum Electronics Workshop 2025 (talk))</span></li><li><span class="name">Spectator valley state sensing for singlet-triplet qubits</span> <span class="muted">(APS March Meeting 2025 (talk))</span></li><li><span class="name">In-situ charge noise probe through the valley splitting</span> <span class="muted">(APS March Meeting 2024 (talk))</span></li></ul></div>
+  </div>
+</article>
+</div><div class="panel" id="theme-designs" role="tabpanel" hidden><p class="lede blurb">Device-level design and validation of pO and SAGE qubits.</p><article class="project" id="po">
+  <div class="pic"><div class="placeholder">[pO qubit: FCI charge densities of the degenerate ground states, or the three-dot Tunnel Falls layout]</div></div>
+  <div class="body">
+    <h3>p-Orbital (pO) qubits</h3>
+    <p class="muted">The p-orbital (pO) qubit encodes quantum information in the orbital degree of freedom of a five-electron silicon dot, controlled by tuning the anisotropy of the confinement potential. Three projects test the idea from the device level up.</p><div class="sub"><h4>Device simulation of pO qubits on a realistic architecture</h4><p class="muted">We simulated a three-dot linear array (Intel Tunnel Falls) using coupled Schrödinger-Poisson electrostatics with full configuration interaction, and compared the results against detuning-axis pulsed spectroscopy (DAPS) measurements from the Nichol group. The single-electron comparison validates valley and orbital energies, while the five-electron spectra show strong agreement, quantifying how gate voltages govern dot anisotropy and orbital splitting to guide pO qubit design.</p></div><div class="sub"><h4>FCI validation of the five-electron pO qubit</h4><p class="muted">The pO qubit was conceived in a non-interacting shell-filling picture in which four electrons fill the s orbital and the fifth occupies the p manifold, insulating the logical states from electric-dipole charge noise. Using FCI across a range of valley splittings we asked whether this picture survives the Coulomb interaction. Interacting eigenstates spread into higher orbital shells, but exact symmetries of the Hamiltonian (rotation, in-plane reflection, parity) guarantee degenerate ground states with zero dipole moment. Above a valley-splitting crossover near 50 μeV the quadrupole coupling needed for control is preserved, validating pO operation in high-valley-splitting Si/SiGe devices.</p></div><div class="sub"><h4>Hole-based pO qubits in Ge and Si</h4><p class="muted">Holes need only three carriers instead of five to reach the p-like manifold, offer enhanced tunability through strong spin-orbit coupling, and have no sample-dependent valley-splitting randomness. Using FCI with analytical confinement potentials we assess whether hole pO qubits in strained Ge and Si quantum wells retain dipole-free noise protection while delivering faster and more uniform control.</p></div>
+    <div class="chips"><span class="chip"><img class="face" src="images/people/face6.jpg" alt="">David W. Kanaar</span><span class="chip"><img class="face" src="images/people/face8.jpg" alt="">Emily Eagen</span><span class="chip"><img class="face" src="images/people/face4.jpg" alt="">Chris Anderson</span><span class="chip"><img class="face" src="images/people/face5.jpg" alt="">Mark F. Gyure</span></div>
+    <div class="muted small">With John Nichol and Jiuyang Duan (University of Rochester), and Joseph Caporaletti and J. P. Kestner (University of Maryland, Baltimore County)</div>
+    <div class="selpubs"><div class="label">Selected publications</div><ul><li><span class="name">Device simulation of p-orbital qubits on a realistic semiconductor architecture</span> <span class="muted">(in preparation (2026), with the Nichol group, University of Rochester)</span></li><li><span class="name">Validation of the five-electron pO qubit in silicon using FCI</span> <span class="muted">(in preparation (2026))</span></li><li><span class="name">FCI shows pO qubits still work despite not following the shell-filling picture</span> <span class="muted">(APS March Meeting 2026 (talk))</span></li><li><span class="name">Hole-based pO qubits in Ge and Si</span> <span class="muted">(manuscript in preparation (2026))</span></li></ul></div>
+  </div>
+</article>
+<article class="project flip" id="sage">
+  <div class="pic"><div class="placeholder">[SAGE device layout or exchange map from the group&#x27;s design study]</div></div>
+  <div class="body">
+    <h3>Device design for SAGE qubits</h3>
+    <p class="muted">Singlet-only always-on gapless exchange (SAGE) qubits, proposed by the Das Sarma group at Maryland, encode one qubit in the spins of four electrons in four tunnel-coupled quantum dots. The singlet-only encoding is invariant under magnetic field gradients, so the qubit is protected from errors caused by nuclear spins and g-factor variations, and the always-on exchange couplings suppress leakage energetically, while raising the sensitivity to charge noise. We use MaSQE to design realistic Si/SiGe gate layouts that realize the required always-on exchange couplings and to evaluate their charge-noise sensitivity from the simulated electronic structure. [Confirm scope and add a figure.]</p>
+    <div class="chips"><span class="chip"><img class="face" src="images/people/face1.jpg" alt="">Ayan Kumar</span><span class="chip"><img class="face" src="images/people/face5.jpg" alt="">Mark F. Gyure</span><span class="chip"><img class="face" src="images/people/face4.jpg" alt="">Chris Anderson</span></div>
+    
+    <div class="selpubs"><div class="label">Selected publications</div><ul><li><a href="https://arxiv.org/abs/2501.18589">Singlet-only always-on gapless exchange qubits with baseband control</a> <span class="muted">(Physical Review Letters (2025), arXiv:2501.18589)</span></li><li><a href="https://arxiv.org/abs/2604.15419">Singlet-only always-on gapless exchange (SAGE) spin qubits: charge noise effects and two-qubit gates</a> <span class="muted">(arXiv:2604.15419)</span></li></ul></div>
+  </div>
+</article>
+</div><div class="panel" id="theme-ge" role="tabpanel" hidden><p class="lede blurb">Strain, fields, and g-factors in planar Ge.</p><article class="project" id="germanium">
+  <div class="pic"><div class="placeholder">[Niu et al. 2026: strain map and g-tensor variation under the gates]</div></div>
+  <div class="body">
+    <h3>Hole qubits in germanium</h3>
+    <p class="muted">The g-factor governs the behavior of semiconductor spin qubits, since it sets the qubit frequency and its sensitivity to electrical and magnetic noise. Experiments in germanium quantum dots have revealed large g-factor variations under small gate voltage changes, indicating strong coupling between electrostatics and spin properties. We give a quantitative explanation based on strain-induced g-tensor modulation. Finite-element simulations of inhomogeneous strain combined with quantum calculations of hole wavefunctions show that device-induced strain produces spatially varying g-tensors, and gate voltages shift the dot within this landscape. Earlier work with QuTech modeled planar germanium hole qubits in electric and magnetic fields.</p>
+    <div class="chips"><span class="chip"><img class="face" src="images/people/face7.jpg" alt="">Adrian Culver</span><span class="chip"><img class="face" src="images/people/face4.jpg" alt="">Chris Anderson</span><span class="chip"><img class="face" src="images/people/face5.jpg" alt="">Mark F. Gyure</span><span class="chip"><span class="face alum empty"></span>Ekmel Ercan <span class="muted small">(alumni)</span></span></div>
+    <div class="muted small">With Mu Niu, Johnathan Bryan, and Hong-Wen Jiang (UCLA Physics), and Menno Veldhorst and Giordano Scappucci (QuTech, Delft University of Technology)</div>
+    <div class="selpubs"><div class="label">Selected publications</div><ul><li><a href="https://arxiv.org/abs/2608.12718">Gate control of g-factor in germanium quantum dots: a strain-based explanation</a> <span class="muted">(arXiv:2608.12718)</span></li><li><a href="https://arxiv.org/abs/2208.04795">Modeling of planar germanium hole qubits in electric and magnetic fields</a> <span class="muted">(npj Quantum Information 10, 102 (2024))</span></li></ul></div>
+  </div>
+</article>
+</div>
+  </section>
+
+  <section id="open" class="wrap">
+    <h2>Open and ongoing projects</h2>
+    <p class="muted narrow">Threads that are under way or waiting for someone to pick them up. Contact the people listed if you are interested.</p>
+    <ul class="open"><li><div class="name">A new valley-exchange Hamiltonian from intervalley tunnel coupling</div><p class="muted small">Electron exchange in double quantum dots is usually modeled as a scalar Heisenberg interaction J, but intervalley tunnel coupling in silicon allows valley flips during hopping. A Schrieffer-Wolff transformation of a two-site Fermi-Hubbard model with all six doubly occupied states gives an effective Hamiltonian with three exchange channels (ordinary hopping, intervalley hopping, and their interference), so exchange strength is valley-configuration dependent and can be fully suppressed when the couplings align. A spin-valley cross term lets ordinary exchange pulses rotate or flip valley states, a new mechanism for valley manipulation and phase measurement. Builds on D. J. King et al., arXiv:2607.09638 (2026).</p><div class="who">David Kanaar (working manuscript)</div></li><li><div class="name">Spin-orbit coupling in silicon from a four-band effective-mass model</div><p class="muted small">Device-scale simulations for silicon spin qubits usually use a single-band effective-mass model that omits spin-orbit coupling. As fidelities advance, accounting for spin-orbit coupling alongside valley splitting becomes essential for predicting performance limits. This project extends the C++ codebase with a four-band effective-mass model using generic multiband solvers to evaluate state sensitivity to realistic noise, aiming toward self-consistent four-band Schrödinger-Poisson modeling.</p><div class="who">David Kanaar and Adrian Culver (open project)</div></li><li><div class="name">A valley-splitting probe for the three-electron exchange-only qubit</div><p class="muted small">Non-demolition valley reflectometry has been developed for Loss-DiVincenzo and singlet-triplet qubits, but its application to three-electron exchange-only qubits is unexplored. This project formulates a three-electron Hamiltonian with an excited valley state and models how charge noise maps into the dispersive response of a coupled resonator, an in situ diagnostic for all-electrical qubit architectures.</p><div class="who">David Kanaar and Joshua White (in progress)</div></li><li><div class="name">Predicting alloy disorder from valley-splitting maps with neural networks</div><p class="muted small">Atomic-scale alloy disorder at the Si/SiGe interface cannot be measured directly in situ, but spatially resolved valley-splitting landscapes can be mapped experimentally. This project trains neural networks to invert the modeling pipeline, inferring disorder characteristics from experimental valley-splitting maps as a materials-screening diagnostic.</p><div class="who">David Kanaar and Ron Nodel (open project)</div></li><li><div class="name">Tie-bar region of charge stability diagrams</div><p class="muted small">Extension of the digital-twin work to accurately model non-constant lever arms and tunnel couplings near the (1,0)/(0,1) boundary during Pauli-blockade readout.</p><div class="who">David Kanaar and Ron Nodel</div></li><li><div class="name">Q3D versus Q1dxClassical2d benchmark</div><p class="muted small">Comparative performance analysis of two device-modeling frameworks within MaSQE.</p><div class="who">Adrian Culver and David Kanaar</div></li></ul>
+  </section>
+
+  <section id="publications" class="wrap">
+    <h2>Publications</h2>
+    <ul class="pubs"><li><span class="year">2026</span><div><a href="https://arxiv.org/abs/2608.28263">Rapid charge stability diagram generation from device-level modeling of semiconductor quantum dots</a><div class="muted small">R. Nodel, D. W. Kanaar, H.-W. Jiang, J. R. Petta, C. Anderson, M. F. Gyure, et al.. arXiv:2608.28263</div></div></li><li><span class="year">2026</span><div><a href="https://arxiv.org/abs/2608.12718">Gate control of g-factor in germanium quantum dots: a strain-based explanation</a><div class="muted small">M. Niu, A. Culver, J. Bryan, C. Anderson, M. Gyure, H.-W. Jiang. arXiv:2608.12718</div></div></li><li><span class="year">2026</span><div><a href="https://arxiv.org/abs/2607.09652">Silicon-germanium heterostructures with enhanced valley splitting for spin qubits</a><div class="muted small">D. W. Kanaar, E. Martinez, P. Zhang, M. F. Gyure. arXiv:2607.09652</div></div></li><li><span class="year">2026</span><div><a href="https://meetings-archive.aps.org/smt/2026/mar-f10/2/">Design and simulation of a back-gated Si/SiGe double quantum well for valley splitting mapping</a><div class="muted small">L. Tom, C. Anderson, M. Gyure. APS Global Physics Summit, March 2026 (talk)</div></div></li><li><span class="year">2026</span><div><a href="https://meetings-archive.aps.org/smt/2026/mar-f10/1/">Probing disorder in semiconductor qubit devices with device simulations</a><div class="muted small">M. Gyure. APS Global Physics Summit, March 2026 (invited talk)</div></div></li><li><span class="year">2026</span><div><a href="https://arxiv.org/abs/2604.15419">Singlet-only always-on gapless exchange (SAGE) spin qubits: charge noise effects and two-qubit gates</a><div class="muted small">N. L. Foulk, K. Laubscher, S. Hoffman, S. Das Sarma. arXiv:2604.15419</div></div></li><li><span class="year">2026</span><div><span class="name">Device simulation of p-orbital qubits on a realistic semiconductor architecture</span><div class="muted small">E. Eagen, D. W. Kanaar, J. Duan, J. M. Nichol, C. Anderson, M. F. Gyure. in preparation (2026), with the Nichol group, University of Rochester</div></div></li><li><span class="year">2026</span><div><span class="name">Validation of the five-electron pO qubit in silicon using FCI</span><div class="muted small">D. W. Kanaar, J. Caporaletti, J. P. Kestner, C. Anderson, M. F. Gyure. in preparation (2026)</div></div></li><li><span class="year">2026</span><div><span class="name">FCI shows pO qubits still work despite not following the shell-filling picture</span><div class="muted small">D. W. Kanaar. APS March Meeting 2026 (talk)</div></div></li><li><span class="year">2026</span><div><span class="name">Hole-based pO qubits in Ge and Si</span><div class="muted small">D. W. Kanaar, C. Anderson, M. F. Gyure. manuscript in preparation (2026)</div></div></li><li><span class="year">2025</span><div><a href="https://arxiv.org/abs/2507.14108">Fast charge noise sensing using a spectator valley state in a singlet-triplet qubit</a><div class="muted small">D. W. Kanaar, Y. Oda, M. F. Gyure, J. P. Kestner. arXiv:2507.14108</div></div></li><li><span class="year">2025</span><div><a href="https://arxiv.org/abs/2501.18589">Singlet-only always-on gapless exchange qubits with baseband control</a><div class="muted small">N. L. Foulk, S. Hoffman, K. Laubscher, S. Das Sarma. Physical Review Letters (2025), arXiv:2501.18589</div></div></li><li><span class="year">2025</span><div><span class="name">Fast charge noise sensing in singlet-triplet qubits</span><div class="muted small">D. W. Kanaar. Silicon Quantum Electronics Workshop 2025 (talk)</div></div></li><li><span class="year">2025</span><div><span class="name">Spectator valley state sensing for singlet-triplet qubits</span><div class="muted small">D. W. Kanaar. APS March Meeting 2025 (talk)</div></div></li><li><span class="year">2024</span><div><a href="https://arxiv.org/abs/2402.14765">Proposed real-time charge noise measurement via valley state reflectometry</a><div class="muted small">D. W. Kanaar, H. E. Ercan, M. F. Gyure, J. P. Kestner. arXiv:2402.14765</div></div></li><li><span class="year">2024</span><div><a href="https://pubs.aip.org/aip/apl/article/125/2/024001/3303021">Toward utilizing scanning gate microscopy as a high-resolution probe of valley splitting in Si/SiGe heterostructures</a><div class="muted small">E. Cakar, H. E. Ercan, G. Fuchs, A. O. Denisov, C. R. Anderson, M. F. Gyure, J. R. Petta. Applied Physics Letters 125 (2024)</div></div></li><li><span class="year">2024</span><div><a href="https://arxiv.org/abs/2208.04795">Modeling of planar germanium hole qubits in electric and magnetic fields</a><div class="muted small">C.-A. Wang, H. E. Ercan, M. F. Gyure, G. Scappucci, M. Veldhorst, M. Rimbach-Russ. npj Quantum Information 10, 102 (2024)</div></div></li><li><span class="year">2024</span><div><span class="name">In-situ charge noise probe through the valley splitting</span><div class="muted small">D. W. Kanaar. APS March Meeting 2024 (talk)</div></div></li><li><span class="year">2023</span><div><a href="https://arxiv.org/abs/2303.02958">Multielectron dots provide faster Rabi oscillations when the core electrons are strongly confined</a><div class="muted small">H. E. Ercan, C. R. Anderson, S. N. Coppersmith, M. Friesen, M. F. Gyure. arXiv:2303.02958</div></div></li><li><span class="year">2022</span><div><a href="https://arxiv.org/abs/2203.00082">High-precision real-space simulation of electrostatically confined few-electron states</a><div class="muted small">C. R. Anderson, M. F. Gyure, S. Quinn, A. Pan, R. S. Ross, A. A. Kiselev. AIP Advances 12, 065123 (2022)</div></div></li><li><span class="year">2022</span><div><a href="https://arxiv.org/abs/2203.05912">Microwave-frequency scanning gate microscopy of a Si/SiGe double quantum dot</a><div class="muted small">A. O. Denisov, S. W. Oh, G. Fuchs, A. R. Mills, P. Chen, C. R. Anderson, M. F. Gyure, A. W. Barnard, J. R. Petta. Nano Letters 22, 4807 (2022)</div></div></li><li><span class="year">2021</span><div><a href="https://arxiv.org/abs/2104.08232">Valley splittings in Si/SiGe quantum dots with a germanium spike in the silicon well</a><div class="muted small">T. McJunkin, E. R. MacQuarrie, L. Tom, S. F. Neyens, J. P. Dodson, B. Thorgrimsson, J. Corrigan, H. E. Ercan, D. E. Savage, M. G. Lagally, R. Joynt, S. N. Coppersmith, M. Friesen, M. A. Eriksson. Physical Review B 104, 085406 (2021)</div></div></li><li><span class="year">2020</span><div><a href="https://arxiv.org/abs/2001.09240">Resonant exchange operation in triple-quantum-dot qubits for spin–photon transduction</a><div class="muted small">A. Pan, T. E. Keating, M. F. Gyure, E. J. Pritchett, S. Quinn, et al.. Quantum Science and Technology 5, 034005 (2020)</div></div></li></ul>
+  </section>
+
+  <section id="contact" class="wrap contact">
+    <div>
+      <h2>Contact</h2>
+      <div class="name">Mark Gyure</div>
+      <div class="muted">mgyure@ucla.edu<br>Boelter Hall 5408, UCLA<br>(310) 794-5830</div>
+    </div>
+    <div class="join">
+      <div class="name">Join the group</div>
+      <div class="muted">We welcome inquiries from prospective PhD students and undergraduates in ECE, Physics, and Mathematics with an interest in computational physics and quantum devices. Email with a CV and a short note on what you'd like to work on.</div>
+    </div>
+  </section>
+</main>
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tabs [role=tab]');
+  function show(id, push) {
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.theme === id ? 'true' : 'false'); });
+    document.querySelectorAll('.panel').forEach(function (p) { p.hidden = p.id !== 'theme-' + id; });
+    if (push && history.replaceState) history.replaceState(null, '', '#' + id);
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.dataset.theme, true); }); });
+  var h = location.hash.replace('#', '');
+  if (document.getElementById('theme-' + h)) { show(h, false); document.getElementById('projects').scrollIntoView(); }
+})();
+</script>
+<footer><div class="wrap">Center for Quantum Science and Engineering, University of California, Los Angeles</div></footer>
+</body>
+</html>
