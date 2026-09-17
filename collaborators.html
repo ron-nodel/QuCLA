@@ -51,6 +51,71 @@
     </div></div></section>
 
 </main>
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tabs [role=tab]');
+  if (!document.getElementById('person-panel')) { document.querySelectorAll('main > section, .collab').forEach(function (el) { el.classList.add('reveal'); }); if ('IntersectionObserver' in window) { var io2 = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io2.unobserve(e.target); } }); }); document.querySelectorAll('.reveal').forEach(function (el) { io2.observe(el); }); } return; }
+  function show(id, push) {
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.theme === id ? 'true' : 'false'); });
+    document.querySelectorAll('.panel').forEach(function (p) { p.hidden = p.id !== 'theme-' + id; });
+    if (push && history.replaceState) history.replaceState(null, '', '#' + id);
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.dataset.theme, true); }); });
+  var h = location.hash.replace('#', '');
+  if (document.getElementById('theme-' + h)) { show(h, false); document.getElementById('projects').scrollIntoView(); }
+  document.querySelectorAll('.more-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('#' + b.dataset.target + ' .more').forEach(function (li) { li.hidden = false; });
+      b.remove();
+    });
+  });
+  var PERSONS = {};
+  var panel = document.getElementById('person-panel'), inner = panel.querySelector('.person-inner'), current = null;
+  function bold(a, last) { return a.replace(new RegExp('([A-Z]\\.(?:\\s?-?[A-Z]\\.)*\\s)?' + last + '\\b', 'g'), function (m) { return '<strong>' + m + '</strong>'; }); }
+  function pubRow(p, last) {
+    var t = p.u ? '<a href="' + p.u + '">' + p.t + '</a>' : '<span class="name">' + p.t + '</span>';
+    return '<li><span class="year">' + p.y + '</span><div>' + t + '<div class="muted small">' + bold(p.a, last).replace(/\.$/, '') + '. ' + p.v + '</div></div></li>';
+  }
+  function render(k) {
+    var d = PERSONS[k];
+    var papers = d.pubs.filter(function (p) { return !p.talk; }), talks = d.pubs.filter(function (p) { return p.talk; });
+    var h = '<button class="close" aria-label="Close">×</button>';
+    h += '<div class="person-head"><img src="' + d.img + '" alt="" onerror="this.style.display=\'none\'"><div><h3>' + d.name + (d.alumni ? ' <span class="muted small">(alumni)</span>' : '') + '</h3><div class="muted">' + d.role + '</div></div></div>';
+    h += '<div class="person-cols">';
+    h += '<div><h4>Projects</h4>' + (d.projects.length ? '<ul class="plist">' + d.projects.map(function (p) { return '<li><a href="#' + p.theme + '" data-theme="' + p.theme + '" data-project="' + p.id + '">' + p.title + '</a><div class="muted small">' + p.themeLabel + '</div></li>'; }).join('') + '</ul>' : '<p class="muted small">None listed yet.</p>');
+    if (d.open.length) h += '<h4>Open and ongoing</h4><ul class="plist">' + d.open.map(function (o) { return '<li>' + o.t + '<div class="muted small">' + o.who + '</div></li>'; }).join('') + '</ul>';
+    h += '</div>';
+    h += '<div><h4>Publications</h4>' + (papers.length ? '<ul class="pubs compact">' + papers.map(function (p) { return pubRow(p, d.last); }).join('') + '</ul>' : '<p class="muted small">None listed yet.</p>');
+    if (talks.length) h += '<h4>Talks</h4><ul class="pubs compact">' + talks.map(function (p) { return pubRow(p, d.last); }).join('') + '</ul>';
+    h += '</div></div>';
+    inner.innerHTML = h;
+    inner.querySelector('.close').addEventListener('click', closePanel);
+    inner.querySelectorAll('a[data-theme]').forEach(function (a) { a.addEventListener('click', function (ev) { ev.preventDefault(); show(a.dataset.theme, true); var el = document.getElementById(a.dataset.project); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); el.classList.add('flash'); setTimeout(function () { el.classList.remove('flash'); }, 1600); } }); });
+  }
+  function openPerson(k) {
+    document.querySelectorAll('.person').forEach(function (el) { el.classList.toggle('selected', el.dataset.person === k); el.classList.toggle('dim', el.dataset.person !== k); });
+    if (current && panel.classList.contains('is-open')) {
+      inner.classList.add('swap');
+      setTimeout(function () { render(k); inner.classList.remove('swap'); }, 180);
+    } else { render(k); }
+    current = k; panel.classList.add('is-open');
+    setTimeout(function () { panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 60);
+  }
+  function closePanel() {
+    panel.classList.remove('is-open'); current = null;
+    document.querySelectorAll('.person').forEach(function (el) { el.classList.remove('selected', 'dim'); });
+  }
+  document.querySelectorAll('.person').forEach(function (el) {
+    el.addEventListener('click', function () { if (current === el.dataset.person && panel.classList.contains('is-open')) closePanel(); else openPerson(el.dataset.person); });
+    el.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); el.click(); } });
+  });
+  document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') closePanel(); });
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('main > section, .project, .people li, .open li, .collab').forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
+  }
+})();
+</script>
 <footer><div class="wrap">Center for Quantum Science and Engineering, University of California, Los Angeles</div></footer>
 </body>
 </html>

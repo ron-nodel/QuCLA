@@ -1,35 +1,23 @@
-# Quantum Device Modeling Group, UCLA
+# Quantum Device Modeling Group website
 
-Static website for the Gyure / Anderson group at the UCLA Center for Quantum Science and Engineering.
-Plain HTML and CSS, no build step, no dependencies. Works on Vercel, Netlify, GitHub Pages, or any static host.
+Plain HTML, no build step. Hosted with GitHub Pages.
 
 ## Files
 
-```
-index.html          home: intro, group, projects (tabbed), open projects, publications, contact
-collaborators.html  collaborators page
-style.css           all styling (UCLA palette, responsive breakpoints at 900 px and 720 px)
-images/
-  cqse-logo.png
-  group-photo.jpg
-  people/face1.jpg ... face8.jpg   stand-in headshots cropped from the group photo
-```
+- `index.html` – the whole site: intro, group, projects, open projects, publications, talks, contact
+- `collaborators.html` – collaborators page
+- `style.css` – styling
+- `images/` – pictures. See `images/README.md` for what to upload and what to call it.
 
 ## Editing
 
-**Headshots.** Each person in the Group section has
-`<div class="headshot" data-person="…"><img src="images/people/…"></div>`.
-Replace the image path. Square images look best (they are displayed 1:1, `object-fit: cover`).
-The same file is used for the small face next to the person's name on project rows (`<img class="face" …>`).
+Open `index.html` and edit the text directly.
 
-**Project pictures.** Each project row has `<div class="pic"><div class="placeholder">[…]</div></div>`.
-Replace the placeholder div with `<img src="images/….png" alt="…">`. A 16:10 image fits without cropping.
+- Projects sit in `<div class="panel" id="theme-...">` blocks, one per tab. To add a project, copy an existing `<article class="project">` and change the text.
+- Publications are in `#pubs-list`, talks in `#talks-list`. Newest first. Rows after the first 10 papers / 6 talks have `class="more" hidden` so they sit behind the Show all button.
+- A link like `index.html#valley` opens that tab directly.
+- Clicking a person in the Group section opens a panel with their projects, publications and talks. That panel is built by the script at the bottom of `index.html` from the same lists, so it stays in sync on its own.
 
-**Projects and tabs.** Projects live inside `<div class="panel" id="theme-…">` blocks, one per tab.
-The tab buttons are in `<div class="tabs">`; `data-theme` on a button must match the panel id after `theme-`.
-A link with the tab name as hash (`index.html#valley`) opens that tab on load.
+## Deploy
 
-**Publications.** Two places: the "Selected publications" list under each project, and the full list in `#publications`.
-
-**Deploy.** Push to GitHub, then import the repo in Vercel (framework preset: Other, no build command, output directory `.`).
-For GitHub Pages, enable Pages on the `main` branch, root folder.
+Push to `main`. GitHub Pages rebuilds in a minute or two.
