@@ -272,3 +272,19 @@ body.drawer-open { overflow: hidden; }
 .panel:not([hidden]) .project.flash, .oitem.flash, .pubs li.flash { animation: flash 1.6s ease; }
 /* keep the closed drawer's shadow fully off-screen */
 .person-panel { transform: translateX(calc(-100% - 72px)); }
+
+/* sub-topic owner line */
+.sub .who { margin: -4px 2px 12px; color: var(--navy); }
+
+/* official UCLA logo in the header */
+img.ucla-mark { display: block; height: 46px; width: auto; padding: 0; background: none; flex-shrink: 0; }
+
+/* collaborator logos */
+.collab .logo { width: 108px; height: 72px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 10px; background: #fff; border: 1px solid var(--line); border-radius: 6px; }
+.collab .logo img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.collab .logo.nologo { background: #F7F9FC; }
+.collab .logo.nologo::after { content: attr(data-label); color: var(--navy); font-weight: 600; font-size: 0.78rem; line-height: 1.25; text-align: center; }
+@media (max-width: 720px) {
+  img.ucla-mark { height: 36px; }
+  .collab .logo { width: 84px; height: 60px; padding: 8px; }
+}
