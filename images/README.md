@@ -48,12 +48,12 @@ Collaborator logos. Use these exact names. Until a file is there, the card shows
     intel.svg      in
     llnl.svg       in
     tudelft.png    in
-    buffalo.png    missing
-    umbc.png       missing
-    rochester.png  missing
-    wisc.png       missing
-    unsw.png       missing
-    utep.png       missing
+    buffalo.svg    in
+    umbc.svg       in
+    rochester.svg  in
+    wisc.svg       in
+    unsw.png       in
+    utep.png       in
     hrl.png        missing
     lps.png        missing
     avasant.png    missing

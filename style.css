@@ -288,3 +288,9 @@ img.ucla-mark { display: block; height: 46px; width: auto; padding: 0; backgroun
   img.ucla-mark { height: 36px; }
   .collab .logo { width: 84px; height: 60px; padding: 8px; }
 }
+
+/* paper figures in project rows */
+.pic .fig-link { display: block; border: 1px solid var(--line); border-radius: 4px; background: #fff; padding: 8px; cursor: zoom-in; }
+.pic .fig-link:hover { border-color: var(--midblue); }
+.pic .fig-cap { margin-top: 6px; }
+.project:hover .pic img { transform: none; }
